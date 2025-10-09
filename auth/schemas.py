@@ -9,12 +9,3 @@ class Token(BaseModel):
 
     access_token : str
     token_type : str
-
-class ProfileSchema(BaseModel):
-
-    name : str
-    bio : str
-
-class PostsSchema(BaseModel):
-
-    content : str
