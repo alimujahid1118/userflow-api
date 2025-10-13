@@ -23,13 +23,6 @@ def create_user_signup(create_user_request : CreateUserRequest, db : db_dependen
     db.commit()
     return {"message": "user created"}
 
-from datetime import timedelta
-from fastapi import APIRouter, Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordRequestForm
-from typing import Annotated
-from services.common import authenticate_user, create_access_token, db_dependency
-from .schemas import Token  # make sure you have a Token Pydantic model defined
-
 router = APIRouter(prefix="/auth", tags=["Auth"])
 
 @router.post("/login", response_model=Token)
