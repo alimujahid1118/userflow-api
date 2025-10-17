@@ -5,6 +5,7 @@ from posts.views import router as posts_router
 from services.database import Base, engine
 from chat.views import router as chat_router
 from fastapi.middleware.cors import CORSMiddleware
+from friends.views import router as friends_router
 
 Base.metadata.create_all(bind=engine)
 
@@ -22,3 +23,4 @@ app.include_router(auth_router)
 app.include_router(profile_router)
 app.include_router(posts_router)
 app.include_router(chat_router)
+app.include_router(friends_router)
